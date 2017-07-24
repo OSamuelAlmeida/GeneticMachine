@@ -2,8 +2,8 @@ import random
 import sys
 
 DNASize = 11
-MutationChance = 8
-CrossoverChance = 5
+MutationChance = 9
+CrossoverChance = 8
 
 class DNA:
     def __init__(self):
@@ -102,7 +102,7 @@ if __name__ == '__main__':
         topMachines = Machines[:topCreatures]
 
         for i in range(0, childrenCreatures):
-            parents = random.sample(set([ 0, 1, 2 ]), 2)
+            parents = random.sample(set(range(0, topCreatures - 1)), 2)
 
             newDNA = crossover(topMachines[parents[0]].DNA, topMachines[parents[1]].DNA)
             newDNA.mutate()
